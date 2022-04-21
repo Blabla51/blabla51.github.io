@@ -1,0 +1,373 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>
+			Les mots fléchés des présidents
+		</title>
+		<link rel="stylesheet" type="text/css" href="cw.css"></link>
+		<script type="text/javascript" src="jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="cw.js"></script>
+	<script type="text/javascript">
+	var intersections = {};
+intersections["1-down-4"] = "4-across-1";
+intersections["4-across-1"] = "1-down-4";
+intersections["3-down-5"] = "5-across-3";
+intersections["5-across-3"] = "3-down-5";
+intersections["1-down-6"] = "5-across-7";
+intersections["5-across-7"] = "1-down-6";
+intersections["5-across-1"] = "5-down-1";
+intersections["5-down-1"] = "5-across-1";
+intersections["2-down-11"] = "10-across-2";
+intersections["10-across-2"] = "2-down-11";
+intersections["6-down-5"] = "10-across-4";
+intersections["10-across-4"] = "6-down-5";
+intersections["7-down-4"] = "10-across-10";
+intersections["10-across-10"] = "7-down-4";
+intersections["1-down-12"] = "10-across-12";
+intersections["10-across-12"] = "1-down-12";
+intersections["7-down-7"] = "11-across-2";
+intersections["11-across-2"] = "7-down-7";
+intersections["1-down-15"] = "11-across-4";
+intersections["11-across-4"] = "1-down-15";
+intersections["8-down-6"] = "11-across-7";
+intersections["11-across-7"] = "8-down-6";
+intersections["9-down-6"] = "11-across-9";
+intersections["11-across-9"] = "9-down-6";
+intersections["6-down-13"] = "14-across-5";
+intersections["14-across-5"] = "6-down-13";
+intersections["12-down-4"] = "14-across-7";
+intersections["14-across-7"] = "12-down-4";
+intersections["13-down-2"] = "14-across-13";
+intersections["14-across-13"] = "13-down-2";
+
+	var lengths = {};
+lengths["1-down"] = 16;
+lengths["2-down"] = 17;
+lengths["3-down"] = 6;
+lengths["4-across"] = 6;
+lengths["5-across"] = 10;
+lengths["5-down"] = 5;
+lengths["6-down"] = 14;
+lengths["7-down"] = 8;
+lengths["8-down"] = 9;
+lengths["9-down"] = 7;
+lengths["10-across"] = 13;
+lengths["11-across"] = 11;
+lengths["12-down"] = 8;
+lengths["13-down"] = 5;
+lengths["14-across"] = 15;
+
+	var solutions = {};
+solutions["1-down"] = 'CLIMATOHYPOCRITE';
+solutions["2-down"] = 'CYBERPATROUILLEUR';
+solutions["3-down"] = 'GRISOU';
+solutions["4-across"] = 'MACRON';
+solutions["5-across"] = 'SPOLIATION';
+solutions["5-down"] = 'SEGUR';
+solutions["6-down"] = 'NUMERUSCLAUSUS';
+solutions["7-down"] = 'HARAKIRI';
+solutions["8-down"] = 'RIPOLINER';
+solutions["9-down"] = 'SPUTNIK';
+solutions["10-across"] = 'OUTRECUIDANCE';
+solutions["11-across"] = 'PRETERITION';
+solutions["12-down"] = 'OPPROBRE';
+solutions["13-down"] = 'LEPEN';
+solutions["14-across"] = 'RABOUGRISSEMENT';
+
+	var words_in_clue = {};
+words_in_clue["1-down"] = ['1-down'];
+words_in_clue["2-down"] = ['2-down'];
+words_in_clue["3-down"] = ['3-down'];
+words_in_clue["4-across"] = ['4-across'];
+words_in_clue["5-across"] = ['5-across'];
+words_in_clue["5-down"] = ['5-down'];
+words_in_clue["6-down"] = ['6-down'];
+words_in_clue["7-down"] = ['7-down'];
+words_in_clue["8-down"] = ['8-down'];
+words_in_clue["9-down"] = ['9-down'];
+words_in_clue["10-across"] = ['10-across'];
+words_in_clue["11-across"] = ['11-across'];
+words_in_clue["12-down"] = ['12-down'];
+words_in_clue["13-down"] = ['13-down'];
+words_in_clue["14-across"] = ['14-across'];
+
+	$().ready(function() {
+		$("input").keyup(inputBind);
+		CrosswordData.active_letter = "";
+		CrosswordData.active_word = "";
+		CrosswordData.LEFT = 37;
+		CrosswordData.RIGHT = 39;
+		CrosswordData.UP = 38;
+		CrosswordData.DOWN = 40;
+		$("div#panel").css("width", document.width - 29 - 580);
+		$('input[class*="end"]').each(function(id, element) {
+			if (intersections[element.id]) {
+				tmp = element.id.split('-');
+				$('input#'+intersections[element.id]).addClass('end-'+tmp[1]);
+			}
+		});
+	});
+	</script>
+
+	</head>
+	<body>
+	    <div><h3>Le mot fléché du débat présidentiel</h3></div>
+		<div id="padding">
+			<div style="background-color: #000"><div id="crossword" class="grid" style="width: 580px; height:696px;">
+	<span style="top:0px; left:348px;" class="indicator">1</span>
+	<div class="word" id="1-down" style="top: 0px; left:348px; height:464px; width:29px;">
+			<input maxlength="1" type="text" id="1-down-1" class="active" style="top:0px; left:0px;" onfocus="highlightWord('1-down', '1');"></input>
+		<input maxlength="1" type="text" id="1-down-2" class="active" style="top:29px; left:0px;" onfocus="highlightWord('1-down', '2');"></input>
+		<input maxlength="1" type="text" id="1-down-3" class="active" style="top:58px; left:0px;" onfocus="highlightWord('1-down', '3');"></input>
+		<input maxlength="1" type="text" id="1-down-4" class="active" style="top:87px; left:0px;" onfocus="highlightWord('1-down', '4');"></input>
+		<input maxlength="1" type="text" id="1-down-5" class="active" style="top:116px; left:0px;" onfocus="highlightWord('1-down', '5');"></input>
+		<input maxlength="1" type="text" id="1-down-6" class="active" style="top:145px; left:0px;" onfocus="highlightWord('1-down', '6');"></input>
+		<input maxlength="1" type="text" id="1-down-7" class="active" style="top:174px; left:0px;" onfocus="highlightWord('1-down', '7');"></input>
+		<input maxlength="1" type="text" id="1-down-8" class="active" style="top:203px; left:0px;" onfocus="highlightWord('1-down', '8');"></input>
+		<input maxlength="1" type="text" id="1-down-9" class="active" style="top:232px; left:0px;" onfocus="highlightWord('1-down', '9');"></input>
+		<input maxlength="1" type="text" id="1-down-10" class="active" style="top:261px; left:0px;" onfocus="highlightWord('1-down', '10');"></input>
+		<input maxlength="1" type="text" id="1-down-11" class="active" style="top:290px; left:0px;" onfocus="highlightWord('1-down', '11');"></input>
+		<input maxlength="1" type="text" id="1-down-12" class="active" style="top:319px; left:0px;" onfocus="highlightWord('1-down', '12');"></input>
+		<input maxlength="1" type="text" id="1-down-13" class="active" style="top:348px; left:0px;" onfocus="highlightWord('1-down', '13');"></input>
+		<input maxlength="1" type="text" id="1-down-14" class="active" style="top:377px; left:0px;" onfocus="highlightWord('1-down', '14');"></input>
+		<input maxlength="1" type="text" id="1-down-15" class="active" style="top:406px; left:0px;" onfocus="highlightWord('1-down', '15');"></input>
+		<input maxlength="1" type="text" id="1-down-16" class="active" style="top:435px; left:0px;" onfocus="highlightWord('1-down', '16');"></input>
+	</div>
+	<span style="top:29px; left:58px;" class="indicator">2</span>
+	<div class="word" id="2-down" style="top: 29px; left:58px; height:493px; width:29px;">
+			<input maxlength="1" type="text" id="2-down-1" class="active" style="top:0px; left:0px;" onfocus="highlightWord('2-down', '1');"></input>
+		<input maxlength="1" type="text" id="2-down-2" class="active" style="top:29px; left:0px;" onfocus="highlightWord('2-down', '2');"></input>
+		<input maxlength="1" type="text" id="2-down-3" class="active" style="top:58px; left:0px;" onfocus="highlightWord('2-down', '3');"></input>
+		<input maxlength="1" type="text" id="2-down-4" class="active" style="top:87px; left:0px;" onfocus="highlightWord('2-down', '4');"></input>
+		<input maxlength="1" type="text" id="2-down-5" class="active" style="top:116px; left:0px;" onfocus="highlightWord('2-down', '5');"></input>
+		<input maxlength="1" type="text" id="2-down-6" class="active" style="top:145px; left:0px;" onfocus="highlightWord('2-down', '6');"></input>
+		<input maxlength="1" type="text" id="2-down-7" class="active" style="top:174px; left:0px;" onfocus="highlightWord('2-down', '7');"></input>
+		<input maxlength="1" type="text" id="2-down-8" class="active" style="top:203px; left:0px;" onfocus="highlightWord('2-down', '8');"></input>
+		<input maxlength="1" type="text" id="2-down-9" class="active" style="top:232px; left:0px;" onfocus="highlightWord('2-down', '9');"></input>
+		<input maxlength="1" type="text" id="2-down-10" class="active" style="top:261px; left:0px;" onfocus="highlightWord('2-down', '10');"></input>
+		<input maxlength="1" type="text" id="2-down-11" class="active" style="top:290px; left:0px;" onfocus="highlightWord('2-down', '11');"></input>
+		<input maxlength="1" type="text" id="2-down-12" class="active" style="top:319px; left:0px;" onfocus="highlightWord('2-down', '12');"></input>
+		<input maxlength="1" type="text" id="2-down-13" class="active" style="top:348px; left:0px;" onfocus="highlightWord('2-down', '13');"></input>
+		<input maxlength="1" type="text" id="2-down-14" class="active" style="top:377px; left:0px;" onfocus="highlightWord('2-down', '14');"></input>
+		<input maxlength="1" type="text" id="2-down-15" class="active" style="top:406px; left:0px;" onfocus="highlightWord('2-down', '15');"></input>
+		<input maxlength="1" type="text" id="2-down-16" class="active" style="top:435px; left:0px;" onfocus="highlightWord('2-down', '16');"></input>
+		<input maxlength="1" type="text" id="2-down-17" class="active" style="top:464px; left:0px;" onfocus="highlightWord('2-down', '17');"></input>
+	</div>
+	<span style="top:29px; left:232px;" class="indicator">3</span>
+	<div class="word" id="3-down" style="top: 29px; left:232px; height:174px; width:29px;">
+			<input maxlength="1" type="text" id="3-down-1" class="active" style="top:0px; left:0px;" onfocus="highlightWord('3-down', '1');"></input>
+		<input maxlength="1" type="text" id="3-down-2" class="active" style="top:29px; left:0px;" onfocus="highlightWord('3-down', '2');"></input>
+		<input maxlength="1" type="text" id="3-down-3" class="active" style="top:58px; left:0px;" onfocus="highlightWord('3-down', '3');"></input>
+		<input maxlength="1" type="text" id="3-down-4" class="active" style="top:87px; left:0px;" onfocus="highlightWord('3-down', '4');"></input>
+		<input maxlength="1" type="text" id="3-down-5" class="active" style="top:116px; left:0px;" onfocus="highlightWord('3-down', '5');"></input>
+		<input maxlength="1" type="text" id="3-down-6" class="active" style="top:145px; left:0px;" onfocus="highlightWord('3-down', '6');"></input>
+	</div>
+	<span style="top:87px; left:348px;" class="indicator">4</span>
+	<div class="word" id="4-across" style="top: 87px; left:348px; height:29px; width:174px;">
+			<input maxlength="1" type="text" id="4-across-1" class="active" style="top:0px; left:0px;" onfocus="highlightWord('4-across', '1');"></input>
+		<input maxlength="1" type="text" id="4-across-2" class="active" style="top:0px; left:29px;" onfocus="highlightWord('4-across', '2');"></input>
+		<input maxlength="1" type="text" id="4-across-3" class="active" style="top:0px; left:58px;" onfocus="highlightWord('4-across', '3');"></input>
+		<input maxlength="1" type="text" id="4-across-4" class="active" style="top:0px; left:87px;" onfocus="highlightWord('4-across', '4');"></input>
+		<input maxlength="1" type="text" id="4-across-5" class="active" style="top:0px; left:116px;" onfocus="highlightWord('4-across', '5');"></input>
+		<input maxlength="1" type="text" id="4-across-6" class="active" style="top:0px; left:145px;" onfocus="highlightWord('4-across', '6');"></input>
+	</div>
+	<span style="top:145px; left:174px;" class="indicator">5</span>
+	<div class="word" id="5-across" style="top: 145px; left:174px; height:29px; width:290px;">
+			<input maxlength="1" type="text" id="5-across-1" class="active" style="top:0px; left:0px;" onfocus="highlightWord('5-across', '1');"></input>
+		<input maxlength="1" type="text" id="5-across-2" class="active" style="top:0px; left:29px;" onfocus="highlightWord('5-across', '2');"></input>
+		<input maxlength="1" type="text" id="5-across-3" class="active" style="top:0px; left:58px;" onfocus="highlightWord('5-across', '3');"></input>
+		<input maxlength="1" type="text" id="5-across-4" class="active" style="top:0px; left:87px;" onfocus="highlightWord('5-across', '4');"></input>
+		<input maxlength="1" type="text" id="5-across-5" class="active" style="top:0px; left:116px;" onfocus="highlightWord('5-across', '5');"></input>
+		<input maxlength="1" type="text" id="5-across-6" class="active" style="top:0px; left:145px;" onfocus="highlightWord('5-across', '6');"></input>
+		<input maxlength="1" type="text" id="5-across-7" class="active" style="top:0px; left:174px;" onfocus="highlightWord('5-across', '7');"></input>
+		<input maxlength="1" type="text" id="5-across-8" class="active" style="top:0px; left:203px;" onfocus="highlightWord('5-across', '8');"></input>
+		<input maxlength="1" type="text" id="5-across-9" class="active" style="top:0px; left:232px;" onfocus="highlightWord('5-across', '9');"></input>
+		<input maxlength="1" type="text" id="5-across-10" class="active" style="top:0px; left:261px;" onfocus="highlightWord('5-across', '10');"></input>
+	</div>
+	<span style="top:145px; left:174px;" class="indicator">5</span>
+	<div class="word" id="5-down" style="top: 145px; left:174px; height:145px; width:29px;">
+			<input maxlength="1" type="text" id="5-down-1" class="active" style="top:0px; left:0px;" onfocus="highlightWord('5-down', '1');"></input>
+		<input maxlength="1" type="text" id="5-down-2" class="active" style="top:29px; left:0px;" onfocus="highlightWord('5-down', '2');"></input>
+		<input maxlength="1" type="text" id="5-down-3" class="active" style="top:58px; left:0px;" onfocus="highlightWord('5-down', '3');"></input>
+		<input maxlength="1" type="text" id="5-down-4" class="active" style="top:87px; left:0px;" onfocus="highlightWord('5-down', '4');"></input>
+		<input maxlength="1" type="text" id="5-down-5" class="active" style="top:116px; left:0px;" onfocus="highlightWord('5-down', '5');"></input>
+	</div>
+	<span style="top:203px; left:116px;" class="indicator">6</span>
+	<div class="word" id="6-down" style="top: 203px; left:116px; height:406px; width:29px;">
+			<input maxlength="1" type="text" id="6-down-1" class="active" style="top:0px; left:0px;" onfocus="highlightWord('6-down', '1');"></input>
+		<input maxlength="1" type="text" id="6-down-2" class="active" style="top:29px; left:0px;" onfocus="highlightWord('6-down', '2');"></input>
+		<input maxlength="1" type="text" id="6-down-3" class="active" style="top:58px; left:0px;" onfocus="highlightWord('6-down', '3');"></input>
+		<input maxlength="1" type="text" id="6-down-4" class="active" style="top:87px; left:0px;" onfocus="highlightWord('6-down', '4');"></input>
+		<input maxlength="1" type="text" id="6-down-5" class="active" style="top:116px; left:0px;" onfocus="highlightWord('6-down', '5');"></input>
+		<input maxlength="1" type="text" id="6-down-6" class="active" style="top:145px; left:0px;" onfocus="highlightWord('6-down', '6');"></input>
+		<input maxlength="1" type="text" id="6-down-7" class="active" style="top:174px; left:0px;" onfocus="highlightWord('6-down', '7');"></input>
+		<input maxlength="1" type="text" id="6-down-8" class="active" style="top:203px; left:0px;" onfocus="highlightWord('6-down', '8');"></input>
+		<input maxlength="1" type="text" id="6-down-9" class="active" style="top:232px; left:0px;" onfocus="highlightWord('6-down', '9');"></input>
+		<input maxlength="1" type="text" id="6-down-10" class="active" style="top:261px; left:0px;" onfocus="highlightWord('6-down', '10');"></input>
+		<input maxlength="1" type="text" id="6-down-11" class="active" style="top:290px; left:0px;" onfocus="highlightWord('6-down', '11');"></input>
+		<input maxlength="1" type="text" id="6-down-12" class="active" style="top:319px; left:0px;" onfocus="highlightWord('6-down', '12');"></input>
+		<input maxlength="1" type="text" id="6-down-13" class="active" style="top:348px; left:0px;" onfocus="highlightWord('6-down', '13');"></input>
+		<input maxlength="1" type="text" id="6-down-14" class="active" style="top:377px; left:0px;" onfocus="highlightWord('6-down', '14');"></input>
+	</div>
+	<span style="top:232px; left:290px;" class="indicator">7</span>
+	<div class="word" id="7-down" style="top: 232px; left:290px; height:232px; width:29px;">
+			<input maxlength="1" type="text" id="7-down-1" class="active" style="top:0px; left:0px;" onfocus="highlightWord('7-down', '1');"></input>
+		<input maxlength="1" type="text" id="7-down-2" class="active" style="top:29px; left:0px;" onfocus="highlightWord('7-down', '2');"></input>
+		<input maxlength="1" type="text" id="7-down-3" class="active" style="top:58px; left:0px;" onfocus="highlightWord('7-down', '3');"></input>
+		<input maxlength="1" type="text" id="7-down-4" class="active" style="top:87px; left:0px;" onfocus="highlightWord('7-down', '4');"></input>
+		<input maxlength="1" type="text" id="7-down-5" class="active" style="top:116px; left:0px;" onfocus="highlightWord('7-down', '5');"></input>
+		<input maxlength="1" type="text" id="7-down-6" class="active" style="top:145px; left:0px;" onfocus="highlightWord('7-down', '6');"></input>
+		<input maxlength="1" type="text" id="7-down-7" class="active" style="top:174px; left:0px;" onfocus="highlightWord('7-down', '7');"></input>
+		<input maxlength="1" type="text" id="7-down-8" class="active" style="top:203px; left:0px;" onfocus="highlightWord('7-down', '8');"></input>
+	</div>
+	<span style="top:261px; left:435px;" class="indicator">8</span>
+	<div class="word" id="8-down" style="top: 261px; left:435px; height:261px; width:29px;">
+			<input maxlength="1" type="text" id="8-down-1" class="active" style="top:0px; left:0px;" onfocus="highlightWord('8-down', '1');"></input>
+		<input maxlength="1" type="text" id="8-down-2" class="active" style="top:29px; left:0px;" onfocus="highlightWord('8-down', '2');"></input>
+		<input maxlength="1" type="text" id="8-down-3" class="active" style="top:58px; left:0px;" onfocus="highlightWord('8-down', '3');"></input>
+		<input maxlength="1" type="text" id="8-down-4" class="active" style="top:87px; left:0px;" onfocus="highlightWord('8-down', '4');"></input>
+		<input maxlength="1" type="text" id="8-down-5" class="active" style="top:116px; left:0px;" onfocus="highlightWord('8-down', '5');"></input>
+		<input maxlength="1" type="text" id="8-down-6" class="active" style="top:145px; left:0px;" onfocus="highlightWord('8-down', '6');"></input>
+		<input maxlength="1" type="text" id="8-down-7" class="active" style="top:174px; left:0px;" onfocus="highlightWord('8-down', '7');"></input>
+		<input maxlength="1" type="text" id="8-down-8" class="active" style="top:203px; left:0px;" onfocus="highlightWord('8-down', '8');"></input>
+		<input maxlength="1" type="text" id="8-down-9" class="active" style="top:232px; left:0px;" onfocus="highlightWord('8-down', '9');"></input>
+	</div>
+	<span style="top:261px; left:493px;" class="indicator">9</span>
+	<div class="word" id="9-down" style="top: 261px; left:493px; height:203px; width:29px;">
+			<input maxlength="1" type="text" id="9-down-1" class="active" style="top:0px; left:0px;" onfocus="highlightWord('9-down', '1');"></input>
+		<input maxlength="1" type="text" id="9-down-2" class="active" style="top:29px; left:0px;" onfocus="highlightWord('9-down', '2');"></input>
+		<input maxlength="1" type="text" id="9-down-3" class="active" style="top:58px; left:0px;" onfocus="highlightWord('9-down', '3');"></input>
+		<input maxlength="1" type="text" id="9-down-4" class="active" style="top:87px; left:0px;" onfocus="highlightWord('9-down', '4');"></input>
+		<input maxlength="1" type="text" id="9-down-5" class="active" style="top:116px; left:0px;" onfocus="highlightWord('9-down', '5');"></input>
+		<input maxlength="1" type="text" id="9-down-6" class="active" style="top:145px; left:0px;" onfocus="highlightWord('9-down', '6');"></input>
+		<input maxlength="1" type="text" id="9-down-7" class="active" style="top:174px; left:0px;" onfocus="highlightWord('9-down', '7');"></input>
+	</div>
+	<span style="top:319px; left:29px;" class="indicator">10</span>
+	<div class="word" id="10-across" style="top: 319px; left:29px; height:29px; width:377px;">
+			<input maxlength="1" type="text" id="10-across-1" class="active" style="top:0px; left:0px;" onfocus="highlightWord('10-across', '1');"></input>
+		<input maxlength="1" type="text" id="10-across-2" class="active" style="top:0px; left:29px;" onfocus="highlightWord('10-across', '2');"></input>
+		<input maxlength="1" type="text" id="10-across-3" class="active" style="top:0px; left:58px;" onfocus="highlightWord('10-across', '3');"></input>
+		<input maxlength="1" type="text" id="10-across-4" class="active" style="top:0px; left:87px;" onfocus="highlightWord('10-across', '4');"></input>
+		<input maxlength="1" type="text" id="10-across-5" class="active" style="top:0px; left:116px;" onfocus="highlightWord('10-across', '5');"></input>
+		<input maxlength="1" type="text" id="10-across-6" class="active" style="top:0px; left:145px;" onfocus="highlightWord('10-across', '6');"></input>
+		<input maxlength="1" type="text" id="10-across-7" class="active" style="top:0px; left:174px;" onfocus="highlightWord('10-across', '7');"></input>
+		<input maxlength="1" type="text" id="10-across-8" class="active" style="top:0px; left:203px;" onfocus="highlightWord('10-across', '8');"></input>
+		<input maxlength="1" type="text" id="10-across-9" class="active" style="top:0px; left:232px;" onfocus="highlightWord('10-across', '9');"></input>
+		<input maxlength="1" type="text" id="10-across-10" class="active" style="top:0px; left:261px;" onfocus="highlightWord('10-across', '10');"></input>
+		<input maxlength="1" type="text" id="10-across-11" class="active" style="top:0px; left:290px;" onfocus="highlightWord('10-across', '11');"></input>
+		<input maxlength="1" type="text" id="10-across-12" class="active" style="top:0px; left:319px;" onfocus="highlightWord('10-across', '12');"></input>
+		<input maxlength="1" type="text" id="10-across-13" class="active" style="top:0px; left:348px;" onfocus="highlightWord('10-across', '13');"></input>
+	</div>
+	<span style="top:406px; left:261px;" class="indicator">11</span>
+	<div class="word" id="11-across" style="top: 406px; left:261px; height:29px; width:319px;">
+			<input maxlength="1" type="text" id="11-across-1" class="active" style="top:0px; left:0px;" onfocus="highlightWord('11-across', '1');"></input>
+		<input maxlength="1" type="text" id="11-across-2" class="active" style="top:0px; left:29px;" onfocus="highlightWord('11-across', '2');"></input>
+		<input maxlength="1" type="text" id="11-across-3" class="active" style="top:0px; left:58px;" onfocus="highlightWord('11-across', '3');"></input>
+		<input maxlength="1" type="text" id="11-across-4" class="active" style="top:0px; left:87px;" onfocus="highlightWord('11-across', '4');"></input>
+		<input maxlength="1" type="text" id="11-across-5" class="active" style="top:0px; left:116px;" onfocus="highlightWord('11-across', '5');"></input>
+		<input maxlength="1" type="text" id="11-across-6" class="active" style="top:0px; left:145px;" onfocus="highlightWord('11-across', '6');"></input>
+		<input maxlength="1" type="text" id="11-across-7" class="active" style="top:0px; left:174px;" onfocus="highlightWord('11-across', '7');"></input>
+		<input maxlength="1" type="text" id="11-across-8" class="active" style="top:0px; left:203px;" onfocus="highlightWord('11-across', '8');"></input>
+		<input maxlength="1" type="text" id="11-across-9" class="active" style="top:0px; left:232px;" onfocus="highlightWord('11-across', '9');"></input>
+		<input maxlength="1" type="text" id="11-across-10" class="active" style="top:0px; left:261px;" onfocus="highlightWord('11-across', '10');"></input>
+		<input maxlength="1" type="text" id="11-across-11" class="active" style="top:0px; left:290px;" onfocus="highlightWord('11-across', '11');"></input>
+	</div>
+	<span style="top:464px; left:174px;" class="indicator">12</span>
+	<div class="word" id="12-down" style="top: 464px; left:174px; height:232px; width:29px;">
+			<input maxlength="1" type="text" id="12-down-1" class="active" style="top:0px; left:0px;" onfocus="highlightWord('12-down', '1');"></input>
+		<input maxlength="1" type="text" id="12-down-2" class="active" style="top:29px; left:0px;" onfocus="highlightWord('12-down', '2');"></input>
+		<input maxlength="1" type="text" id="12-down-3" class="active" style="top:58px; left:0px;" onfocus="highlightWord('12-down', '3');"></input>
+		<input maxlength="1" type="text" id="12-down-4" class="active" style="top:87px; left:0px;" onfocus="highlightWord('12-down', '4');"></input>
+		<input maxlength="1" type="text" id="12-down-5" class="active" style="top:116px; left:0px;" onfocus="highlightWord('12-down', '5');"></input>
+		<input maxlength="1" type="text" id="12-down-6" class="active" style="top:145px; left:0px;" onfocus="highlightWord('12-down', '6');"></input>
+		<input maxlength="1" type="text" id="12-down-7" class="active" style="top:174px; left:0px;" onfocus="highlightWord('12-down', '7');"></input>
+		<input maxlength="1" type="text" id="12-down-8" class="active" style="top:203px; left:0px;" onfocus="highlightWord('12-down', '8');"></input>
+	</div>
+	<span style="top:522px; left:348px;" class="indicator">13</span>
+	<div class="word" id="13-down" style="top: 522px; left:348px; height:145px; width:29px;">
+			<input maxlength="1" type="text" id="13-down-1" class="active" style="top:0px; left:0px;" onfocus="highlightWord('13-down', '1');"></input>
+		<input maxlength="1" type="text" id="13-down-2" class="active" style="top:29px; left:0px;" onfocus="highlightWord('13-down', '2');"></input>
+		<input maxlength="1" type="text" id="13-down-3" class="active" style="top:58px; left:0px;" onfocus="highlightWord('13-down', '3');"></input>
+		<input maxlength="1" type="text" id="13-down-4" class="active" style="top:87px; left:0px;" onfocus="highlightWord('13-down', '4');"></input>
+		<input maxlength="1" type="text" id="13-down-5" class="active" style="top:116px; left:0px;" onfocus="highlightWord('13-down', '5');"></input>
+	</div>
+	<span style="top:551px; left:0px;" class="indicator">14</span>
+	<div class="word" id="14-across" style="top: 551px; left:0px; height:29px; width:435px;">
+			<input maxlength="1" type="text" id="14-across-1" class="active" style="top:0px; left:0px;" onfocus="highlightWord('14-across', '1');"></input>
+		<input maxlength="1" type="text" id="14-across-2" class="active" style="top:0px; left:29px;" onfocus="highlightWord('14-across', '2');"></input>
+		<input maxlength="1" type="text" id="14-across-3" class="active" style="top:0px; left:58px;" onfocus="highlightWord('14-across', '3');"></input>
+		<input maxlength="1" type="text" id="14-across-4" class="active" style="top:0px; left:87px;" onfocus="highlightWord('14-across', '4');"></input>
+		<input maxlength="1" type="text" id="14-across-5" class="active" style="top:0px; left:116px;" onfocus="highlightWord('14-across', '5');"></input>
+		<input maxlength="1" type="text" id="14-across-6" class="active" style="top:0px; left:145px;" onfocus="highlightWord('14-across', '6');"></input>
+		<input maxlength="1" type="text" id="14-across-7" class="active" style="top:0px; left:174px;" onfocus="highlightWord('14-across', '7');"></input>
+		<input maxlength="1" type="text" id="14-across-8" class="active" style="top:0px; left:203px;" onfocus="highlightWord('14-across', '8');"></input>
+		<input maxlength="1" type="text" id="14-across-9" class="active" style="top:0px; left:232px;" onfocus="highlightWord('14-across', '9');"></input>
+		<input maxlength="1" type="text" id="14-across-10" class="active" style="top:0px; left:261px;" onfocus="highlightWord('14-across', '10');"></input>
+		<input maxlength="1" type="text" id="14-across-11" class="active" style="top:0px; left:290px;" onfocus="highlightWord('14-across', '11');"></input>
+		<input maxlength="1" type="text" id="14-across-12" class="active" style="top:0px; left:319px;" onfocus="highlightWord('14-across', '12');"></input>
+		<input maxlength="1" type="text" id="14-across-13" class="active" style="top:0px; left:348px;" onfocus="highlightWord('14-across', '13');"></input>
+		<input maxlength="1" type="text" id="14-across-14" class="active" style="top:0px; left:377px;" onfocus="highlightWord('14-across', '14');"></input>
+		<input maxlength="1" type="text" id="14-across-15" class="active" style="top:0px; left:406px;" onfocus="highlightWord('14-across', '15');"></input>
+	</div>
+
+			</div></div>
+			<br />
+			<div id="information" class="bottom">
+				<div id="across">
+					<h3>Horizontal</h3>
+	<div id="4-across-clue" class="clue" onClick="highlightWord('4-across');">
+		4 : Candidat
+	</div>
+	<div id="5-across-clue" class="clue" onClick="highlightWord('5-across');">
+		5 : Dépouillage
+	</div>
+	<div id="10-across-clue" class="clue" onClick="highlightWord('10-across');">
+		10 : Audace
+	</div>
+	<div id="11-across-clue" class="clue" onClick="highlightWord('11-across');">
+		11 : Attention sur ce que l'on dit pas
+	</div>
+	<div id="14-across-clue" class="clue" onClick="highlightWord('14-across');">
+		14 : Retard de croissance
+	</div>
+
+				</div>
+				<div id="down">
+					<h3>Vertical</h3>
+	<div id="1-down-clue" class="clue" onClick="highlightWord('1-down');">
+		1 : Greenwashing
+	</div>
+	<div id="2-down-clue" class="clue" onClick="highlightWord('2-down');">
+		2 : Police du net
+	</div>
+	<div id="3-down-clue" class="clue" onClick="highlightWord('3-down');">
+		3 : Gaz inflammable
+	</div>
+	<div id="5-down-clue" class="clue" onClick="highlightWord('5-down');">
+		5 : Consultation santé
+	</div>
+	<div id="6-down-clue" class="clue" onClick="highlightWord('6-down');">
+		6 : Nombre limité
+	</div>
+	<div id="7-down-clue" class="clue" onClick="highlightWord('7-down');">
+		7 : Eventration
+	</div>
+	<div id="8-down-clue" class="clue" onClick="highlightWord('8-down');">
+		8 : Peindre
+	</div>
+	<div id="9-down-clue" class="clue" onClick="highlightWord('9-down');">
+		9 : Vaccin
+	</div>
+	<div id="12-down-clue" class="clue" onClick="highlightWord('12-down');">
+		12 : Sujet de honte
+	</div>
+	<div id="13-down-clue" class="clue" onClick="highlightWord('13-down');">
+		13 : Candidate
+	</div>
+
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
